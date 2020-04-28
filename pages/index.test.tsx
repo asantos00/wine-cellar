@@ -34,6 +34,7 @@ it('renders wines coming from client', async () => {
   const { getByText } = render(<Home />)
 
   await waitFor(() => {
+    expect(getWines).toHaveBeenCalled();
     expect(getByText('Douro 2019')).toBeTruthy();
     expect(getByText('Alentejo 2020')).toBeTruthy();
   })
